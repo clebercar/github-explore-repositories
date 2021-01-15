@@ -9,7 +9,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import ListRepositories from '@/components/ListRepositories.vue'
 import axios from 'axios'
 
-interface Repositories {
+interface IRepositories {
   id: number
   name: string
   description: string
@@ -27,7 +27,7 @@ interface Repositories {
   },
 })
 export default class Home extends Vue {
-  private repositories: Repositories[] = []
+  private repositories: IRepositories[] = []
 
   async beforeMount() {
     const { data } = await axios.get(
